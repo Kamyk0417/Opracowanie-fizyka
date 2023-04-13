@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('Raw Data.csv')
 pd.set_option('display.max_rows', None)             #Do tej linijki otwarcie w pythonie pliku z pomiarami w aplikacji
 
-df = df.drop(df[df["Absolute acceleration (m/s^2)"] < 2].index)             #pozbycie się pomiarów, gdzie przyspieszenie jest mniejsze od 2 (wyjaśnienie na kartce)
+df = df.drop(df[df["Absolute acceleration (m/s^2)"] < 2].index)             #pozbycie się pomiarów, gdzie przyspieszenie jest mniejsze od 2
 
 print(df.to_string())           #kontrolne wyświetlenie tabeli z pomiarami
 
@@ -13,7 +13,7 @@ results = []            #pusta lista do której będą dodawane moce chwilowe dl
 
 for i in range(1, len(df.index)):       #pętla wykonuje się tyle razy ile pomiarów wykonaliśmy o zmiennej i z każdym powtórzeniem pętli większej o 1
     sum = 0                             #suma będąca częścią wyznaczonego wzoru
-    if df.iloc[i][4] < 2.06: break      #pętla się przerywa gdy pomiar przyspieszenia i-tego pomiaru będzie mniejszy od 2.06 (wyjaśnienie na kartce)
+    if df.iloc[i][4] < 2.06: break      #pętla się przerywa gdy pomiar przyspieszenia i-tego pomiaru będzie mniejszy od 2.06
     for j in range(1, i):               #ta i następna linijka - obliczanie sumy (z wyznaczonego wzoru) od pierwszego do i-tego pomiaru
         sum += (df.iloc[j][0] - df.iloc[j-1][0]) * df.iloc[j][4]
     Pch = mass * df.iloc[i][4] * sum            #Obliczanie chwilowej mocy dla i-tego pomiaru wg wyznaczonego wzoru
