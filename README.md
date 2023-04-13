@@ -15,3 +15,5 @@ Przepraszam jeżeli nie wszystko jest w pełni jasne, nie chciałem się zagłę
 
 Pozdrawiam 
 Jakub Kamiński
+
+PS Jeżeli kodu jest trochę za mało na sensowną ocenę to mam na githubie jeszcze "projekt" RPGGame, jest on ledwo zaczęty ale parę ciekawych linijek tam jest.
